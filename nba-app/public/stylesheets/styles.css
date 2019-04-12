@@ -1,0 +1,8 @@
+.cards-container {
+  display: flex;
+  padding: 10% 20%;
+}
+
+.card {
+  width: 50%;
+}
