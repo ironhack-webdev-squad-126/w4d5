@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express');
 const hbs = require('hbs');
 const app = express();
@@ -9,50 +10,20 @@ app.set('view engine', 'hbs');
 
 hbs.registerPartials(__dirname + '/views/partials');
 
+const playersList = JSON.parse(fs.readFileSync('players.json', 'utf-8'));
+
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/players', (req, res) => {
-  const playersList = [
-    {
-      name: 'Russell',
-      lastName: 'Westbrook',
-      team: 'OKC',
-      photo: '/images/westbrook.jpg'
-    },
-    {
-      name: 'Kevin',
-      lastName: 'Durant',
-      team: 'GSW',
-      photo: '/images/snake.jpg'
-    },
-    {
-      name: 'Lebron',
-      lastName: 'James',
-      team: 'CLE',
-      photo: '/images/lebron.jpg'
-    },
-    {
-      name: 'Emanuel',
-      lastName: 'Ginóbilli',
-      team: 'SAS',
-      photo: '/images/ginobili.jpg'
-    },
-    {
-      name: 'Kyrie',
-      lastName: 'Irving',
-      team: 'BOS',
-      photo: '/images/kyrie.jpg'
-    },
-    {
-      name: 'Kobe',
-      lastName: 'Bryant',
-      team: 'LAL',
-      photo: '/images/kobe.jpg'
-    }
-  ];
+app.get('/players/:playerName', (req, res) => {
+  const { playerName } = req.params;
+  // find in the playersList the object for who the name equals the playerName in the params
+  // const player = ??
+  res.render('player', player);
+});
 
+app.get('/players', (req, res) => {
   res.render('players', {
     playersList: playersList
   });

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Russell",
+    "lastName": "Westbrook",
+    "team": "OKC",
+    "photo": "/images/westbrook.jpg"
+  },
+  {
+    "name": "Kevin",
+    "lastName": "Durant",
+    "team": "GSW",
+    "photo": "/images/snake.jpg"
+  },
+  {
+    "name": "Lebron",
+    "lastName": "James",
+    "team": "CLE",
+    "photo": "/images/lebron.jpg"
+  },
+  {
+    "name": "Emanuel",
+    "lastName": "Ginóbilli",
+    "team": "SAS",
+    "photo": "/images/ginobili.jpg"
+  },
+  {
+    "name": "Kyrie",
+    "lastName": "Irving",
+    "team": "BOS",
+    "photo": "/images/kyrie.jpg"
+  },
+  {
+    "name": "Kobe",
+    "lastName": "Bryant",
+    "team": "LAL",
+    "photo": "/images/kobe.jpg"
+  }
+]
