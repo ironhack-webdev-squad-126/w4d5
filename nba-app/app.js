@@ -18,9 +18,15 @@ app.get('/', (req, res) => {
 
 app.get('/players/:playerName', (req, res) => {
   const { playerName } = req.params;
+
   // find in the playersList the object for who the name equals the playerName in the params
-  // const player = ??
-  res.render('player', player);
+
+  const player = playersList.find(
+    el => el.name.toLowerCase() === playerName.toLowerCase()
+  );
+
+  if (!player) res.send('Player not found!');
+  else res.render('player', player);
 });
 
 app.get('/players', (req, res) => {
